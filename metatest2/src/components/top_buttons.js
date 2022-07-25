@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import {GetData, PostData} from './async';
 import { Link } from "gatsby"
 
 class TopButtons extends React.Component {

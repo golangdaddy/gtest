@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 import TemplateBrowser from './template_browser'
-import TopBar from './top_bar'
 
 class MainIndex extends React.Component {
 

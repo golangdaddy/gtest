@@ -1,9 +1,5 @@
 import * as React from 'react'
 
-import Input from '../components/input'
-
-import {GetData, PostData} from './async';
-
 class TemplateVision extends React.Component {
 
     constructor(props) {

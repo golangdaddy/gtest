@@ -1,9 +1,7 @@
 import * as React from 'react'
 import { graphql } from "gatsby"
-import { BrowserRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 
 import TopBar from '../components/top_bar';
-import MainIndex from '../components/mainIndex'
 
 // Step 2: Define your component
 const IndexPage = ({ data }) => {

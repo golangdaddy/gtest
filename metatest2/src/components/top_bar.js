@@ -2,12 +2,11 @@ import * as React from 'react'
 import { graphql } from "gatsby"
 import { BrowserRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 
-import {GetData, PostData} from './async';
 import TopButtons from './top_buttons';
 
 import MainIndex from './mainIndex';
 import MainTemplate from './mainTemplate';
-import MainSearch from './MainSearch';
+import MainSearch from './mainSearch';
 import MainMeta from './mainMeta';
 import MainNode from './mainNode';
 

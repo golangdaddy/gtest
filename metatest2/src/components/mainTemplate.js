@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import TopBar from './top_bar'
 import CreateForm from './createForm'
 
 class MainTemplate extends React.Component {
