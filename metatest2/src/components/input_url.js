@@ -1,21 +1,14 @@
 // Step 1: Import React
 import * as React from 'react'
 
-const leftColStyle = {
-    "textAlign": "right",
-}
-  
-const rightColStyle = {
-    "textAlign": "left",
-}
-
 const InputUrl = (props) => {
+  var id = props.field.id;
   return (
     <tr>
-        <td style={leftColStyle}>{props.field.n}</td>
-        <td style={rightColStyle}>
-            <input type='url' maxlength="2048" value={props.data} />
-        </td>
+      <td style={props.styles.left}>{props.field.n}</td>
+      <td style={props.styles.right}>
+        <input id={id} type='url' maxLength="2048" />
+      </td>
     </tr>
   )
 };

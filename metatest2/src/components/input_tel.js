@@ -1,21 +1,14 @@
 // Step 1: Import React
 import * as React from 'react'
 
-const leftColStyle = {
-    "textAlign": "right",
-}
-  
-const rightColStyle = {
-    "textAlign": "left",
-}
-
 const InputTel = (props) => {
+  var id = props.field.x.toString() + "_" + props.field.t;
   return (
     <tr>
-        <td style={leftColStyle}>{props.field.n}</td>
-        <td style={rightColStyle}>
-            <input type='email' value={props.data} />
-        </td>
+      <td style={props.styles.left}>{props.field.n}</td>
+      <td style={props.styles.right}>
+        <input id={id} type='tel' onChange={props.hc} />
+      </td>
     </tr>
   )
 };

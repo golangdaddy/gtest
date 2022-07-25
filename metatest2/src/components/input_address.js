@@ -1,48 +1,40 @@
-// Step 1: Import React
 import * as React from 'react'
 
-const leftColStyle = {
-    "textAlign": "right",
-    "verticalAlign": "top",
-}
-  
-const rightColStyle = {
-    "textAlign": "left",
-}
-
 const InputAddress = (props) => {
-  return (
-    <tr>
-        <td style={leftColStyle}>{props.field.n}</td>
-        <td style={rightColStyle}>
-            <div>
-                <input type='text' maxlength={props.field.l} value={props.data.line1} />
-                <label for="html">building & street</label>
-            </div>
-            <div>
-                <input type='text' maxlength={props.field.l} value={props.data.line2} />
-                <label for="html">address line 2</label>
-            </div>
-            <div>
-                <input type='text' maxlength={props.field.l} value={props.data.line3} />
-                <label for="html">address line 3</label>
-            </div>
-            <div>
-                <input type='text' maxlength={props.field.l} value={props.data.county} />
-                <label for="html">county/state</label>
-            </div>
-            <div>
-                <input type='text' maxlength={props.field.l} value={props.data.country} />
-                <label for="html">country</label>
-            </div>
-            <div>
-                <input type='text' maxlength={props.field.l} value={props.data.postcode} />
-                <label for="html">zipcode/postcode</label>
-            </div>
-        </td>
-    </tr>
-  )
+    var id = props.field.id;
+    return (
+        <tr>
+            <td style={props.styles.left}>{props.field.n}</td>
+            <td style={props.styles.right}>
+                <fieldset>
+                    <div>
+                        <input id={id+"_1"} onChange={props.hc} type='text' maxLength={props.field.l} />
+                        <label>building & street</label>
+                    </div>
+                    <div>
+                        <input id={id+"_2"} onChange={props.hc} type='text' maxLength={props.field.l} />
+                        <label>address line 2</label>
+                    </div>
+                    <div>
+                        <input id={id+"_3"} onChange={props.hc} type='text' maxLength={props.field.l} />
+                        <label>address line 3</label>
+                    </div>
+                    <div>
+                        <input id={id+"_4"} onChange={props.hc} type='text' maxLength={props.field.l} />
+                        <label>county/state</label>
+                    </div>
+                    <div>
+                        <input id={id+"_5"} onChange={props.hc} type='text' maxLength={props.field.l} />
+                        <label>country</label>
+                    </div>
+                    <div>
+                        <input id={id+"_6"} onChange={props.hc} type='text' maxLength={props.field.l} />
+                        <label>zipcode/postcode</label>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+    )
 };
 
-// Step 3: Export your component
-export default InputAddress
+export default InputAddress;

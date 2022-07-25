@@ -1,23 +1,14 @@
 // Step 1: Import React
 import * as React from 'react'
 
-const leftColStyle = {
-    "textAlign": "right",
-}
-  
-const rightColStyle = {
-    "textAlign": "left",
-}
-
 const InputRange = (props) => {
+  var id = props.field.x.toString() + "_" + props.field.t;
   return (
     <tr>
-        <td style={leftColStyle}>{props.field.n}</td>
-        <td style={rightColStyle}>
-            <input type='range' min={props.field.min} max={props.field.max} defaultValue={props.data} value={props.newData} />
-            <span>{props.newData}</span>
-        
-        </td>
+      <td style={props.styles.left}>{props.field.n}</td>
+      <td style={props.styles.right}>
+        <input id={id} type='range' onChange={props.hc} min={props.field.min} max={props.field.max} />        
+      </td>
     </tr>
   )
 };

@@ -1,7 +1,7 @@
 // Step 1: Import React
 import * as React from 'react'
 
-const InputText = (props) => {
+const InputPrimary = (props) => {
   var id = props.field.id;
   return (
     <tr>
@@ -14,4 +14,4 @@ const InputText = (props) => {
 };
 
 // Step 3: Export your component
-export default InputText
+export default InputPrimary

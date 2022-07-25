@@ -1,25 +1,18 @@
 // Step 1: Import React
 import * as React from 'react'
 
-const leftColStyle = {
-    "textAlign": "right",
-}
-  
-const rightColStyle = {
-    "textAlign": "left",
-}
-
 const InputRadio = (props) => {
   return (
   <tr>
-    <td style={leftColStyle}>{props.field.n}</td>
-    <td style={rightColStyle}>
+    <td style={props.styles.left}>{props.field.n}</td>
+    <td style={props.styles.right}>
       {
-        props.data.map(function(v, i){
+        props.field.v.map(function(v, i){
+          var id = props.field.id;
           return (
             <span key={i.toString()}>
-              <input type="radio" defaultValue="false" id="html" name="fav_language" />
-              <label for="html">{v}</label>
+              <input id={id} name={id} type="radio" onChange={props.hc} value={v} />
+              <label>{v}</label>
             </span>
           );
         })

@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import InputEmail from './input_email'
 import InputText from './input_text'
+import ImputPrimary from './input_primary'
 import InputDate from './input_date'
 import InputNumber from './input_number'
 import InputRange from './input_range'
@@ -10,57 +11,87 @@ import InputUrl from './input_url'
 import InputTel from './input_tel'
 import InputAddress from './input_address'
 import InputRadio from './input_radio'
+import InputSelect from './input_select'
+import InputTextarea from './input_textarea'
+import InputDatalist from './input_datalist'
+import InputGender from './input_gender'
+import InputNames from './input_names'
 
-const leftColStyle = {
-    "textAlign": "right",
-    "verticalAlign": "top",
-}
-  
-const rightColStyle = {
-    "textAlign": "left",
+const cellStyles = {
+    "left": {
+        "textAlign": "right",
+        "verticalAlign": "top",
+    },
+    "right": {
+        "textAlign": "left",
+    }
 }
 
 const Input = (props) => {
 
     var view = "";
-    switch (props.field.f) {
+    switch (props.field.t) {
   
     case "address":
-      view = <InputAddress key={props.key} field={props.field} data={props.data}></InputAddress>;
+      view = <InputAddress hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
   
     case "tel":
-      view = <InputTel key={props.key} field={props.field} data={props.data}></InputTel>;
+      view = <InputTel hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
   
     case "range":
-      view = <InputRange key={props.key} field={props.field} data={props.data}></InputRange>;
+      view = <InputRange hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
   
     case "number":
-      view = <InputNumber key={props.key} field={props.field} data={props.data}></InputNumber>;
+      view = <InputNumber hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
   
     case "date":
-      view = <InputDate key={props.key} field={props.field} data={props.data}></InputDate>;
+      view = <InputDate hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
-  
+
+    case "primary":
+      view = <InputText hc={props.hc} styles={cellStyles} field={props.field} />;
+      break;
+
     case "text":
-      view = <InputText key={props.key} field={props.field} data={props.data}></InputText>;
+      view = <InputText hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
   
     case "email":
-      view = <InputEmail key={props.key} field={props.field} data={props.data}></InputEmail>;
+      view = <InputEmail hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
     
     case "radio":
-      view = <InputRadio key={props.key} field={props.field} data={props.data}></InputRadio>;
+      view = <InputRadio hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
     
     case "url":
-      view = <InputUrl key={props.key} field={props.field} data={props.data}></InputUrl>;
+      view = <InputUrl hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
   
+    case "select":
+      view = <InputSelect hc={props.hc} styles={cellStyles} field={props.field} />;
+      break;
+
+    case "textarea":
+      view = <InputTextarea hc={props.hc} styles={cellStyles} field={props.field} />;
+      break;
+
+    case "datalist":
+      view = <InputDatalist hc={props.hc} styles={cellStyles} field={props.field} />;
+      break;
+
+    case "gender":
+      view = <InputGender hc={props.hc} styles={cellStyles} field={props.field} />;
+      break;
+
+    case "names":
+      view = <InputNames hc={props.hc} styles={cellStyles} field={props.field} />;
+      break;
+
     default:      view = (
         <tr>
             <td><p>?</p></td>
@@ -69,8 +100,12 @@ const Input = (props) => {
     )
     }
 
-    return view;
+    return (
+      <>
+        {view}
+        <input id={"_"+props.field.id} type="hidden" value={JSON.stringify(props.field)}></input>
+      </>
+    )
 };
 
-// Step 3: Export your component
 export default Input

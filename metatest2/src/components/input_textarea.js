@@ -1,17 +1,16 @@
-// Step 1: Import React
 import * as React from 'react'
 
-const InputText = (props) => {
+const InputTextarea = (props) => {
   var id = props.field.id;
   return (
     <tr>
       <td style={props.styles.left}>{props.field.n}</td>
       <td style={props.styles.right}>
-        <input type='text' onChange={props.hc} id={id} maxLength={props.field.l} />
+        <textarea id={id} onChange={props.hc} maxLength={props.field.l} />
       </td>
     </tr>
   )
 };
 
 // Step 3: Export your component
-export default InputText
+export default InputTextarea

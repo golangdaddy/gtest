@@ -3,5 +3,7 @@ module.exports = {
     title: `MetaPimp`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
+  plugins: [
+    "gatsby-plugin-use-query-params",
+  ],
 }
