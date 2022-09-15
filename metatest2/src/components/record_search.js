@@ -39,7 +39,6 @@ class RecordSearch extends React.Component {
         var state = Object.assign({}, this.state);
         state.class = event.target.value;
         this.setState(state);
-        console.log(this.state.class);
     }
 
     render() {
@@ -91,7 +90,12 @@ class RecordSearch extends React.Component {
                                 return (
                                     <div key={i.toString()}>
                                         <a href={"/search?id="+c+"_"+result.ID}>
-                                            <div style={s}>{result.Auto[0]}</div>
+                                            {
+                                                c == "country" && <div style={s}>{result.ID}</div>
+                                            }
+                                            {
+                                                c != "country" && <div style={s}>{result.Auto["_"][0]}</div>
+                                            }
                                         </a>
                                     </div>
                                 );
