@@ -6,6 +6,7 @@ import OutputStandard from './output_standard'
 import OutputDate from './output_date'
 import OutputAddress from './output_address'
 import OutputGender from './output_gender'
+import OutputTextarea from './output_textarea'
 
 const OutputNested = (props) => {
 
@@ -18,7 +19,7 @@ const OutputNested = (props) => {
         break;
 
       case "address":
-        view = <OutputAddress styles={props.styles} field={props.group} data={props.data.v} />;
+        view = <OutputAddress styles={props.styles} group={props.group} />;
         break;
 
       case "date":
@@ -28,7 +29,11 @@ const OutputNested = (props) => {
       case "text":
         view = <OutputStandard styles={props.styles} group={props.group} />;
         break;
-    
+
+      case "textarea":
+        view = <OutputTextarea styles={props.styles} group={props.group} />;
+        break;
+
       case "primary":
         view = <OutputStandard styles={props.styles} group={props.group} />;
         break;

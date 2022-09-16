@@ -25,7 +25,7 @@ class OutputForms extends React.Component {
                     return (
                         <tr key={i.toString()}>
                             <td>
-                                <iframe title={record} src={'/meta?id='+record} />
+                                <iframe style={{backgroundColor:"#aaa",border:"0px",borderRadius:"14px",width:"700px"}} title={record} src={'http://localhost:8080/api/render/'+record} />
                             </td>
                         </tr>
                     );

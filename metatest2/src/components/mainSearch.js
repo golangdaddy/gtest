@@ -18,7 +18,7 @@ const MainSearch = (props) => {
                                 <OutputForm record={searchKeyword}></OutputForm>
                             </div>
                             <div>
-                                <iframe style={{width:"100%",height:"500px"}} title={searchKeyword} src={'/metas?id='+searchKeyword} />
+                                <iframe style={{width:"100%",height:"500px",backgroundColor:"#ccc",border:"0px"}} title={searchKeyword} src={'/metas?id='+searchKeyword} />
                             </div>
                         </>
                        )

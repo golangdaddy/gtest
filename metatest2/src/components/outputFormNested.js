@@ -51,10 +51,6 @@ class OutputFormNested extends React.Component {
       return (
         <table style={tableStyle}>
           <tbody>
-            <tr style={tableHeaderStyle}>
-              <td style={cellStyles.left}>{this.state.node.Class}:</td>
-              <td style={cellStyles.right}>{this.state.node.ID}</td>
-            </tr>
             {
               this.state.node.Data.map(function(group, i){
                 return (

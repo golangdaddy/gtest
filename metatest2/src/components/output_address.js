@@ -3,14 +3,14 @@ import * as React from 'react'
 const OutputAddress = (props) => {
   return (
     <tr>
-        <td style={props.styles.left}>{props.field.n}</td>
+        <td style={props.styles.left}>address</td>
         <td style={props.styles.right}>
-            <div>{props.data.line1}</div>
-            <div>{props.data.line2}</div>
-            <div>{props.data.line3}</div>
-            <div>{props.data.county}</div>
-            <div>{props.data.country}</div>
-            <div>{props.data.postcode}</div>
+            <div>{props.group[0] && props.group[0].v}</div>
+            <div>{props.group[1] && props.group[1].v}</div>
+            <div>{props.group[2] && props.group[2].v}</div>
+            <div>{props.group[3] && props.group[3].v}</div>
+            <div>{props.group[4] && props.group[4].v}</div>
+            <div>{props.group[5] && props.group[5].v}</div>
         </td>
     </tr>
   )
