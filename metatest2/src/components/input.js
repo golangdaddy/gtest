@@ -72,6 +72,10 @@ const Input = (props) => {
       view = <InputUrl hc={props.hc} styles={cellStyles} field={props.field} />;
       break;
   
+    case "image":
+      view = <InputUrl hc={props.hc} styles={cellStyles} field={props.field} />;
+      break;
+
     case "select":
       view = <InputSelect hc={props.hc} styles={cellStyles} field={props.field} />;
       break;

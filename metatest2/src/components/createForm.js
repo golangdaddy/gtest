@@ -106,6 +106,7 @@ class CreateForm extends React.Component {
 
       this.tools = [
         "primary",
+        "image ",
         "names",
         "gender",
         "address",
